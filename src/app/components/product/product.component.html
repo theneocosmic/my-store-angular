@@ -1,0 +1,18 @@
+<div role="group" class="card product-container" >
+  <app-img [img]="product.image"></app-img>
+  <div class="title-container">
+    <p class="product-title">{{ product.title }}</p>
+  </div>
+  <div class="description-price">
+    <p class="product-price">{{ product.price | currency }}</p>
+  </div>
+  <div class="description-container" HighlightDirective>
+    <p class="product-description">{{ product.description }}</p>
+  </div>
+  <div class="buttons-container">
+    <button (click)="onAddToCart()" class="btn btn-primary">
+      Add to Cart <i class="fa-solid fa-cart-plus"></i>
+    </button>
+    <button class="btn btn-secondary m-1">See Detail</button>
+  </div>
+</div>

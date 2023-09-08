@@ -1,0 +1,24 @@
+.img-container{
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+height: 120px;
+overflow-y: hidden;
+padding-top: 25px;;
+    
+    img{
+       height: 100%;
+        object-fit:cover;
+        transition: ease-out 1s;
+    }
+
+    img:hover{
+        height: 140%;
+        transition: ease-out 1s;
+        object-fit: fill;
+
+    }
+
+   
+}
