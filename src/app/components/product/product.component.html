@@ -1,10 +1,17 @@
-<div role="group" class="card product-container" >
-  <app-img [img]="product.image"></app-img>
+<div role="group" class="card product-container">
+  <app-img [img]="product.images[0]"></app-img>
+  <div class="product-detail-rating">
+    <app-rating [ratingProduct]="product?.rating"></app-rating>
+  </div>
   <div class="title-container">
     <p class="product-title">{{ product.title }}</p>
   </div>
-  <div class="description-price">
-    <p class="product-price">{{ product.price | currency }}</p>
+  <div class="description-price-without-discount">
+    <p *ngIf="product?.rebate" class="product-price-discount">{{ product.priceWithOutDiscount | currency }}</p>
+  </div>
+  <div class="product-price-container">
+    <p class="product-price d-inline">{{ product.price | currency: 'MXN' }}  </p>
+    <span class="product-percent-discount pl-2" *ngIf="product?.rebate">{{product.discount}} <i class="fa-solid fa-percent"></i> OFF</span>
   </div>
   <div class="description-container" HighlightDirective>
     <p class="product-description">{{ product.description }}</p>
@@ -13,6 +20,8 @@
     <button (click)="onAddToCart()" class="btn btn-primary">
       Add to Cart <i class="fa-solid fa-cart-plus"></i>
     </button>
-    <button class="btn btn-secondary m-1">See Detail</button>
+    <button class="btn btn-secondary m-1" (click)="showDetail()">
+      See Detail
+    </button>
   </div>
 </div>

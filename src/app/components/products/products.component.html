@@ -1,7 +1,35 @@
+<!-- <button (click)="createNewProduct()">Add</button> -->
 <div class="products--grid">
   <app-product
     [product]="product"
     *ngFor="let product of productos"
     (addProduct)="onAddToShoppingCart($event)"
+    (showProduct)="onShowDetail($event)"
   ></app-product>
+</div>
+
+<!--Slide-->
+<div class="product-detail" [class.active]="showProductDetail">
+  <div class="close-button-container">
+    <a class="pl-4 product-detail-button" (click)="toggleProductDetail()"><i class="fa-solid fa-2x fa-circle-xmark">  <span>Close</span> </i> </a>
+  </div>
+  <div class="product-detail-data-container row" *ngIf="productChosen">
+  <div class="col-lg-4 text-center">
+    <img class="product-detail-img" (error)="imgError()" [src]="productChosen.images[0]" [alt]="productChosen.title" *ngIf="productChosen.images[0]; else elseImg">
+    <ng-template #elseImg>
+      <img [src]="imageDefault" alt="Image not found">
+    </ng-template>
+  </div>
+  <div class="col-lg-8">
+    <h4 class="product-detail-title">{{productChosen.title}}</h4>
+    <p class="product-detail-category">{{productChosen.category.name|uppercase}}</p>
+    <div class="product-detail-rating">
+      <app-rating [ratingProduct]="productChosen?.rating"></app-rating>
+    </div>
+    <p class="product-detail-description">{{productChosen.description}}</p>
+  </div>
+  </div>
+  <button (click)="updateProduct()">Update</button>
+  <!-- <button (click)="create()">Update</button> -->
+  <button (click)="deleteProduct()">Delete</button>
 </div>
