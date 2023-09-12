@@ -19,8 +19,6 @@ img:string = '';
   @Input() alt: string = '';
   @Output() loaded = new EventEmitter<string>();
   imageDefault = 'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg';
-// counter = 0;
-// counterFn:number|undefined;
 
   constructor() {
     // before render
@@ -39,10 +37,7 @@ img:string = '';
     // before render
     // async - fetch -- once time
     console.log('ngOnInit', 'imgValue =>', this.img);
-    // this.counterFn = window.setInterval(()=>{
-    //   this.counter += 1;
-    //   console.log("run counter");
-    // },1000)
+
   }
 
   ngAfterViewInit() {

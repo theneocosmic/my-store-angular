@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-md  bg-dark">
+<nav class="navbar fixed-top navbar-dark navbar-expand-md  bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img class="yard-sale-logo" src="../../../assets/icons/yard_sale_logo.png" alt="logo">
@@ -16,7 +16,12 @@
 
             </ul>
             <ul class="nav navbar-nav text-white ml-auto">
-                <li class="nav-item pr-3" role="presentation">neocosmic@gmail.com <a href=""><i class="fa-solid fa-circle-chevron-down"></i></a></li>
+                <li class="nav-item pr-3" role="presentation">
+                    <a *ngIf="profile.email === ''; else showProfile" class="btn btn-outline-secondary" (click)="login()">Login</a>
+                    <ng-template #showProfile>
+                        {{profile.email}} <a href=""><i class="fa-solid fa-circle-chevron-down"></i></a>
+                    </ng-template>
+                </li>     
                 <li class="pr-2"><div class="total-cart">{{total|currency}}</div></li>
                 <li class="nav-item" role="presentation">
                     

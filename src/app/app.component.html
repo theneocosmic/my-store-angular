@@ -1,7 +1,13 @@
-<!-- <p><input type="text" [(ngModel)]="imgParent" /></p>
-<button (click)="toggleImage()">Toggle Image</button>
-<p>{{showImage}}</p>
-<app-img *ngIf="showImage" (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
-<hr/> -->
 <app-nav></app-nav>
+
+<br/>
+<br/>
+<br/>
+<button (click)="downloadPDF()" >Descargar PDF</button><br/>
+<input type="file" (change)="onUpload($event)">
+<img *ngIf="imgRta" [src]="imgRta" />
 <app-products></app-products>
+<div class="row">
+    <button class="btn btn-secondary" (click)="createUser()">Create new User</button><br/>
+    <button class="btn btn-primary" (click)="fillMockData()" title="Usar esta función para ingresar datos al API, cada cierto tiempo la tabla de productos es truncada.">Fill Data</button>
+</div>
