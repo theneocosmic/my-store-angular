@@ -10,7 +10,4 @@ Ejercicio con angular: componentes y servicios. Espero que este proyecto te pued
 
 
 <img src="https://raw.githubusercontent.com/theneocosmic/my-store-angular/master/src/assets/screenshots/YardSaleHOme.png"/>
-
-
-
-    <img src="https://raw.githubusercontent.com/theneocosmic/my-store-angular/master/src/assets/screenshots/ProductDetailYard.png"/>
+<img src="https://raw.githubusercontent.com/theneocosmic/my-store-angular/master/src/assets/screenshots/ProductDetailYard.png"/>
